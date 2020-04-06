@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4</title>
+</head>
+<body>
+    <h1>Aula 4</h1>
+    <br>
+    <form>
+        <label for="kmValue">Distância em km:</label>
+        <input onchange="atualiza()" type="number" id="kmValue" name="valorkm"><br>
+        <label for="timeValue">Tempo em Minutos</label>
+        <input onchange="atualiza()" type="number" id="timeValue" name="timeValue"><br>
+    </form>
+
+    <p id="corrida">Sua corida foi</p>
+    
+    <script>
+        // 2 + km*1.4 + min*0.26 Fórmula da conta
+        
+        function atualiza() {
+            var valorFixo = 2
+            var valorkm = document.getElementById('kmValue').value
+            var valorTempo = document.getElementById('timeValue').value
+
+            var valorCorrida = valorFixo + 1.4*valorkm + 0.26*valorTempo
+            
+            //return valorCorrida
+            document.getElementById("corrida").innerHTML = "Sua corrida foi de: R$ " + valorCorrida.toFixed(2);
+        }
+        
+        //document.write("Sua corrida foi de: R$ ", atualiza())
+        
+    </script>
+</body>
+</html>
